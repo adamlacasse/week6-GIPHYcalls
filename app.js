@@ -50,10 +50,25 @@ $(document).ready(function() {
         $("#images").empty();
     });
   
-    $("#addAnimal").on("click", function(a){
-        a.preventDefault();
-        console.log("animal value: " + $("inputAnimal").attr("value"));
-    });
+    $("#addAnimal").on("click", function() {
+
+      // console.log("you clicked the button");
+      var animal = $("#inputAnimal").val();
+      console.log(animal);
+  
+      // Attach variable to parent of buttons at top of page
+      // var pageSectionButtons = document.querySelector('.btn-group');
+      
+      // build Button
+      var animalButton = document.createElement('button');
+      animalButton.className = "btn btn-info animal-button";
+      animalButton.innerHTML = `${animal}`;
+      
+      // Add Button to page
+      // pageSectionButtons.appendChild(animalButton);
+      $("#animal-button").append(animalButton);
+      
+    }); // end of click event for search button
     
   
   }); // end of document.ready 
